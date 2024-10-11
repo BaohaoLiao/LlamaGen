@@ -41,9 +41,9 @@ class VQModel(nn.Module):
             config.commit_loss_beta, 
             config.entropy_loss_ratio,
             config.codebook_l2_norm, 
-            config.codebook_show_usage
+            config.codebook_show_usage,
             num_clusters=config.num_clusters,
-            cluster_dim=config.cluster_dim
+            cluster_dim=config.cluster_dim,
         )
         self.quant_conv = nn.Conv2d(config.z_channels, config.codebook_embed_dim, 1)
         self.post_quant_conv = nn.Conv2d(config.codebook_embed_dim, config.z_channels, 1)
