@@ -145,10 +145,10 @@ def main(args):
         vq_model.load_state_dict(checkpoint["model"])
         if args.ema:
             ema.load_state_dict(checkpoint["ema"])
-        optimizer.load_state_dict(checkpoint["optimizer"])
         vq_loss.discriminator.load_state_dict(checkpoint["discriminator"])
         optimizer_disc.load_state_dict(checkpoint["optimizer_disc"])
         if not args.finetune:
+            optimizer.load_state_dict(checkpoint["optimizer"])
             train_steps = checkpoint["steps"] if "steps" in checkpoint else int(args.vq_ckpt.split('/')[-1].split('.')[0])
             start_epoch = int(train_steps / int(len(dataset) / args.global_batch_size))
             train_steps = int(start_epoch * int(len(dataset) / args.global_batch_size))
