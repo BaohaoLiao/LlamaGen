@@ -84,6 +84,7 @@ def main(args):
         num_clusters=args.num_clusters,
         cluster_dim=args.cluster_dim,
     )
+    logger.info(vq_model)
     logger.info(f"VQ Model Parameters: {sum(p.numel() for p in vq_model.parameters()):,}")
     if args.ema:
         ema = deepcopy(vq_model).to(device)  # Create an EMA of the model for use after training
