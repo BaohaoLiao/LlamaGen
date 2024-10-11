@@ -14,7 +14,7 @@ URL_MAP = {
 }
 
 CKPT_MAP = {
-    "vgg_lpips": "vgg.pth"
+    "vgg_lpips": "/mnt/nushare2/data/baliao/vae/00_llamagen/plms/vgg.pth"
 }
 
 MD5_MAP = {
