@@ -23,7 +23,7 @@ from utils.distributed import init_distributed_mode
 from utils.ema import update_ema, requires_grad
 from dataset.augmentation import random_crop_arr
 from dataset.build import build_dataset
-from tokenizer.tokenizer_image.vq_model import VQ_models
+from tokenizer.tokenizer_image.vq_model_finetune import VQ_models
 from tokenizer.tokenizer_image.vq_loss import VQLoss
 
 import warnings
